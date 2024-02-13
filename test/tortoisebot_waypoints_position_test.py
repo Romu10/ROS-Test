@@ -17,7 +17,7 @@ import unittest
 import rostest
 import time
 PKG = 'tortoisebot_waypoints'
-NAME = 'tortoisebot_waypoints_position_test.py'
+NAME = 'tortoisebot_waypoints_position_test'
 
 class TestRobotWaypoints(unittest.TestCase):
 
@@ -84,8 +84,7 @@ class TestRobotWaypoints(unittest.TestCase):
         #Compare the final position with the current position 
         self.error_pos = math.sqrt(pow(self.final_positon.y - self.current_position.y, 2) + pow(self.final_positon.x - self.current_position.x, 2))
         self.assertTrue((0.0 <= self.error_pos <= 0.5), "Position error. Minimal distance error was not between the expected values.")
-        print(self.current_position)
-
+        print("Error: %f", self.error_pos)
 
 if __name__ == '__main__':
     rostest.rosrun(PKG, NAME, TestRobotWaypoints)

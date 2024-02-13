@@ -16,13 +16,13 @@ import unittest
 import rostest
 import time
 PKG = 'tortoisebot_waypoints'
-NAME = 'tortoisebot_waypoints_position_test.py'
+NAME = 'tortoisebot_waypoints_rotation_test'
 
 class TestRobotWaypoints(unittest.TestCase):
 
     def setUp(self):
 
-        rospy.init_node('position_test_node')
+        rospy.init_node('roation_test_node')
         self.odom_sub = rospy.Subscriber('/odom', Odometry, self.odom_callback)
         self.yaw_precision = 0.20
         self.init_position = Point()
